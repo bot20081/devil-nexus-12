@@ -166,7 +166,7 @@ const usersPushName = sock.user.name; // Get user's push name
       // Handle birthday or congratulatory messages
       if (
         msg.key.fromMe === false &&
-        (text.toLowerCase().includes("birthday")
+        text.toLowerCase().includes("birthday")
       ) {
         if (isJanuary1) {
           const replyText = `🎉 Thank you, ${pushName}! I really appreciate it. 😊`; // Create reply text
