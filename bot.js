@@ -146,7 +146,11 @@ const usersPushName = sock.user.name; // Get user's push name
 
       const ISallow = getSettings(); // Get settings
       const perfix = ISallow.perfix; // Get prefix
-
+if(text && msg.key.fromMe === false){
+     const statusMessage = `${pushName} මොකද මැසෙජ් කරන්නේ`; // Create status message
+        await sendQuotedMessage(from, statusMessage, msg, sock); // Send status message
+        sendReactMessage(from, "👋", msg, sock); // Send reaction message
+}
       // Handle "alive" command
       if (text.toLowerCase().startsWith(perfix + 'alive')) {
         const uptime = Date.now() - botStartTime; // Calculate total uptime in milliseconds
@@ -184,7 +188,6 @@ const usersPushName = sock.user.name; // Get user's push name
 
       // Access the quoted message context
       const quotedMessage = msg.message.extendedTextMessage?.contextInfo?.quotedMessage; // Get quoted message
-
       // Ensure the message is a reply to the bot
       if (quotedMessage) {
         const quotedMessageContext = msg.message?.extendedTextMessage?.contextInfo; // Get quoted message context
