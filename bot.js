@@ -147,7 +147,7 @@ const usersPushName = sock.user.name; // Get user's push name
       const ISallow = getSettings(); // Get settings
       const perfix = ISallow.perfix; // Get prefix
 if(text && msg.key.fromMe === false){
-     const statusMessage = `${pushName} මොකද මැසෙජ් කරන්නේ`; // Create status message
+     const statusMessage = `${pushName}How can I help you today? 😊✨`; // Create status message
         await sendQuotedMessage(from, statusMessage, msg, sock); // Send status message
         sendReactMessage(from, "👋", msg, sock); // Send reaction message
 }
