@@ -163,9 +163,10 @@ if(msg.key.fromMe === false && text.toLowerCase().startsWith('hi') ||text.toLowe
         await sendQuotedMessage(from, statusMessage, msg, sock); // Send status message
         sendReactMessage(from, "👋", msg, sock); // Send reaction message
       }
+const currentDate = new Date(); // Get current date
+const isBirthday = currentDate.getDate() === 3 && currentDate.getMonth() === 10; // November 3rd
 
-      const currentDate = new Date(); // Get current date
-      const isJanuary1 = currentDate.getDate() === 2 && currentDate.getMonth() === 0; // Check if it's Jan 1 (your birthday)
+console.log(isBirthday); // Output: true if today is November 3rd, otherwise false
 
       // Handle birthday or congratulatory messages
       if (
